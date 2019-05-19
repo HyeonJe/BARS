@@ -1,5 +1,4 @@
-package org.sajae.myapplication8;
-//package com.example.bars;
+package com.example.bars;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
