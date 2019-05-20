@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showCameraActivity() {
-        Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+        intent.putExtra("id", "hite");  //예시를 위해 main에서 바로 result로 넘겼습니다. (intent 담아서)
         startActivityForResult(intent, MAIN_CAMERA_REQUESTCODE);
     }
 
