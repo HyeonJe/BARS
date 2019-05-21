@@ -59,7 +59,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 // 확인 눌렀을 경우
                 break;
             case R.id.btn_cancel:
-                // 취소 눌렀을 경우
+                finish();
                 break;
         }
     }
@@ -112,6 +112,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
             imgMain.setImageURI(null);
             imgMain.setImageURI(photoUri);
             revokeUriPermission(photoUri, Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
         }
     }
 
