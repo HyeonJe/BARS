@@ -97,6 +97,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != RESULT_OK) {
             Toast.makeText(this, "취소 되었습니다.", Toast.LENGTH_SHORT).show();
+            finish();
             return;
         }
         if (requestCode == PICK_FROM_CAMERA) {
@@ -124,6 +125,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
         int size = list.size();
         if (size == 0) {
             Toast.makeText(this, "취소 되었습니다.", Toast.LENGTH_SHORT).show();
+            finish();
             return;
         } else {
             Toast.makeText(this, "용량이 큰 사진의 경우 시간이 오래 걸릴 수 있습니다.", Toast.LENGTH_SHORT).show();
