@@ -5,6 +5,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.bars"
@@ -33,6 +37,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.firebase:firebase-core:16.0.9'
+    // dependency to allow us to crop square images
+    implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    // TensorFlow lite dependency
+    implementation 'org.tensorflow:tensorflow-lite:+'
 }
 
 apply plugin: 'com.google.gms.google-services'
