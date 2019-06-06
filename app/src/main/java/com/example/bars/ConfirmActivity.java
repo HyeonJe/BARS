@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -96,13 +95,12 @@ public class ConfirmActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-        // initialize byte array. The size depends if the input data needs to be quantized or not
+        // initialize byte array.
         imgData = ByteBuffer.allocateDirect(4 * DIM_IMG_SIZE_X * DIM_IMG_SIZE_Y * DIM_PIXEL_SIZE);
         imgData.order(ByteOrder.nativeOrder());
 
-        // initialize probabilities array. The datatypes that array holds depends if the input data needs to be quantized or not
+        // initialize probabilities array.
         labelProbArray = new float[1][labelList.size()];
-
 
         setContentView(R.layout.activity_confirm);
 
@@ -139,7 +137,6 @@ public class ConfirmActivity extends AppCompatActivity {
         try {
             Bitmap cropImg = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
             selected_image.setImageBitmap(cropImg);
-            // not sure why this happens, but without this the image appears on its side
             selected_image.setRotation(selected_image.getRotation() + 90);
         } catch (IOException e) {
             e.printStackTrace();
