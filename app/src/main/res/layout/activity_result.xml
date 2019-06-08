@@ -82,7 +82,7 @@
                 android:text="메인으로"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/return_button"
-                android:layout_alignParentBottom="true" android:background="@android:color/background_light"/>
+                android:layout_alignParentBottom="true" />
     </RelativeLayout>
 
 
